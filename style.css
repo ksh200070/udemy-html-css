@@ -1,11 +1,77 @@
-h1,
-h2,
-h3,
-h4,
-p,
-li {
-  font-family: sans-serif;
+* {
+  /* 모든 요소에 border적용됨 */
+  /* border-top: 10px solid #1098ad; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
   color: #444;
+  font-family: sans-serif;
+  /* margin: 0; */
+
+  /* 상속되지않는 속성(폰트관련 속성은 대부분 상속) */
+  border-top: 10px solid #1098ad;
+  position: relative;
+}
+/* *, body의 차이 : * 선택자는 모든 요소에 적용되며 상속이 존재하지않는다. / body 선택자는 어떤 스타일을 넣던지 상속된다. */
+
+.main-header {
+  background-color: #f7f7f7;
+  /* padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px; */
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
+h2 {
+  position: relative;
+}
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  color: #000;
+
+  position: absolute;
+  top: -15px;
+  right: -25px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header-title,
+.sub-title {
+  margin-bottom: 10px;
+}
+
+nav a:link {
+  /* background-color: orangered;
+  margin: 20px;
+  padding: 20px;
+  display: block;
+  color: white; */
+
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
 }
 
 h1,
@@ -31,18 +97,28 @@ h4 {
   text-transform: uppercase;
   /* 부모요소의 (좌우)가운데 위치 */
   text-align: center;
+  margin-bottom: 30px;
 }
 p {
   font-size: 22px;
   /*높이가 글자의 1.5배가 됨 -> 커질수록 글자 위아래 간격 커짐 */
   line-height: 1.5;
+  margin: 10px 0;
 }
 li {
   font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 40px;
 }
-footer p {
+li:last-child {
+  margin-bottom: 0;
+}
+/* .related-posts {
+  width: 500px;
+} */
+/* footer p {
   font-size: 16px;
-}
+} */
 /* 
 article header p {
   font-style: italic;
@@ -62,16 +138,10 @@ article header p {
 }
 .related {
   list-style: none;
+  margin-left: 0;
 }
-
-.main-header {
-  background-color: #f7f7f7;
-}
-
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
+.related li {
+  margin-left: 0;
 }
 
 /* .first-li {
@@ -123,4 +193,67 @@ a:hover {
 a:active {
   background-color: black;
   font-style: italic;
+}
+
+/* 아래와 같은 결과 */
+/* nav a:link,
+nav p {
+  font-size: 18px;
+} */
+
+nav {
+  font-size: 18px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  color: white;
+  border: 2px solid #116976;
+  background-color: #1098ad;
+  border-radius: 5px;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* FLOATS */
+.author-img {
+  float: left;
+}
+
+.author {
+  padding-left: 20px;
+  padding-top: 0px;
+  float: left;
+}
+h1 {
+  float: left;
+}
+nav {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+article {
+  /* background-color: green; */
+  width: 825px;
+  float: left;
+}
+aside {
+  /* background-color: rebeccapurple; */
+  width: 300px;
+  float: right;
+}
+footer {
+  /* background-color: yellow; */
+  clear: both;
 }
