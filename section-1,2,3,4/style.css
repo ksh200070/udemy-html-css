@@ -22,7 +22,7 @@ body {
   padding-left: 40px;
   padding-right: 40px; */
   padding: 20px 40px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 aside {
   background-color: #f7f7f7;
@@ -66,7 +66,6 @@ nav a:link {
   color: white; */
 
   margin-right: 30px;
-  margin-top: 10px;
   display: inline-block;
 }
 
@@ -103,7 +102,7 @@ p {
   font-size: 22px;
   /*높이가 글자의 1.5배가 됨 -> 커질수록 글자 위아래 간격 커짐 */
   line-height: 1.5;
-  margin: 10px 0;
+  margin-bottom: 30px;
 }
 li {
   font-size: 20px;
@@ -220,6 +219,7 @@ button {
 }
 
 /* FLOATS */
+/*
 .author-img {
   float: left;
 }
@@ -244,16 +244,93 @@ nav {
   display: block;
 }
 article {
-  /* background-color: green; */
   width: 825px;
   float: left;
 }
 aside {
-  /* background-color: rebeccapurple; */
   width: 300px;
   float: right;
 }
 footer {
-  /* background-color: yellow; */
   clear: both;
+}
+*/
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  /* gap: 15px; */
+  margin-bottom: 15px;
+}
+
+.author {
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.related li {
+  margin-bottom: 30px;
+}
+
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* FLEXBOX LAYOUT */
+/* .row {
+  display: flex;
+  gap: 75px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+article {
+  flex: 0 0 825px;
+  margin-bottom: 0;
+}
+
+aside {
+
+  DEFAULT
+  flex-grow : 0;
+  flex-shrink : 1;
+  flex-basis : auto;
+  
+  flex: 0 0 300px;
+} */
+
+/* CSS GRID LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+.main-header {
+  grid-column: 1/-1;
+}
+footer {
+  grid-column: 1/-1;
 }
